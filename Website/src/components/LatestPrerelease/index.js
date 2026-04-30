@@ -105,6 +105,20 @@ export default function LatestPrerelease() {
     );
   }
 
+  if (state.status === "error") {
+    return (
+      <p>
+        <em>
+          Pre-release info couldn't be loaded right now. See{" "}
+          <Link to="https://github.com/BornToBeRoot/NETworkManager/releases">
+            GitHub Releases
+          </Link>
+          .
+        </em>
+      </p>
+    );
+  }
+
   if (state.status !== "ready") {
     return null;
   }
